@@ -79,6 +79,24 @@ After training completes, the script will automatically save:
 These outputs can be used to evaluate training dynamics or reload the best-performing model.
 
 
+## 🧱 Roofline Extraction from RGB Orthophotos
 
+To extract structured rooflines from RGB orthophotos, this project uses the method from:
 
+**[Unsupervised Roofline Extraction from True Orthophotos](https://github.com/tudelft3d/Roofline-extraction-from-orthophotos)**  
+*Gao, Peters, and Stoter, 3D GeoInfo 2023*
 
+This method detects line segments corresponding to rooftop structures and saves the output as `.gpkg` (GeoPackage) files. These line features are later used for polygon proposal generation and further post-processing in this project.
+
+#### Citation
+
+```bibtex
+@article{sum2021,
+author = {Weixiao Gao, Ravi Peters, and Jantien Stoter},
+title = {Unsupervised Roofline Extraction from True Orthophotos for LoD2 Building Model Reconstruction},
+journal = {Lecture Notes in Geoinformation and Cartography (LNG&C) series},
+year={2023},
+publisher = {Springer},
+}
+
+```
