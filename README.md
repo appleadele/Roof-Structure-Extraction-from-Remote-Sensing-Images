@@ -116,3 +116,52 @@ The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all necessary inputs fo
 - Computed **unary costs** per polygon (based on predicted instance masks)
 - Built **adjacency graphs** using polygon edge adjacency
 - All outputs saved for later optimization
+- 
+
+## Ground Truth Mask Generation
+
+The script [`generate_gt_masks_from_polygons.py`](./generate_gt_masks_from_polygons.py) converts polygon annotations into pixel-level **ground truth masks**.
+
+This is useful for:
+- Quantitative evaluation (e.g., IoU, pixel accuracy)
+- Visual comparison with predicted masks
+
+### Workflow
+
+- Input:
+  - RGB images (`.jpg`)
+  - Polygon annotations (`.json`) — format: list of closed polygons
+- Output:
+  - Binary masks (`.npy`) — 2D NumPy array (uint8)
+  - Visual previews (`.png`) — each instance shaded for visibility
+
+
+ 
+## MRF Inference and Evaluation
+
+The script [`run_mrf_and_evaluate.py`](./run_mrf_and_evaluate.py) performs **final MRF label assignment** and **evaluates the results** against ground truth masks.
+
+It uses Graph Cuts Optimization (via `gco`) to infer the optimal label configuration based on:
+- Precomputed **unary potentials** (from model predictions)
+- Polygon **adjacency graph**
+- Varying **smoothness costs**
+
+### Inputs
+
+- Precomputed from previous stages:
+  - `*_unary.npy`, `*_graph.pkl` (from MRF preparation)
+  - `*.npy` GT masks (from polygon → mask script)
+
+### Output
+
+- `mrf_evaluation_summary_*.txt`: a tab-separated table summarizing:
+  - TP, FP, FN
+  - Mean IoU
+  - Precision, Recall
+  - Smoothness violation ratio
+
+### 🧪 Example Smoothness Settings
+
+```python
+smoothness_costs = [0.001, 0.1, 1, 10, 100]
+
