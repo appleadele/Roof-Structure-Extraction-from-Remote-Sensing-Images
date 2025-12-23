@@ -91,20 +91,23 @@ If you use this method or its results in your own work, please cite the original
 
 ## Line-to-Polygon Conversion
 
-The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments (stored as `.gpkg` LineStrings) into closed polygon geometries using `shapely.polygonize`.
-
-This is a post-processing step that takes the line-based output from the *Unsupervised Roofline Extraction* method and turns it into usable polygonal proposals for later stages (e.g., MRF optimization).
+The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments from the *Unsupervised Roofline Extraction* method into closed polygon geometries. It saves the result in `.gpkg` format.
 
 ## MRF Unary and Graph Preparation
 
-The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all necessary inputs for MRF optimization, including:
+The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all required data for MRF optimization based on predictions and geometry.
 
-- Soft masks and scores from a trained **Mask R-CNN model**
-- Closed polygons from previous `lines_to_polygons.py` output
-- Computed **unary costs** per polygon (based on predicted instance masks)
-- Built **adjacency graphs** using polygon edge adjacency
-- All outputs saved for later optimization
-- 
+### Input & Output
+
+- **Input:**  
+  - RGB images  
+  - Closed polygon annotations (from `lines_to_polygons.py`)  
+  - Trained Mask R-CNN model checkpoint (`.pth`)   
+
+- **Output:**  
+  - Per-polygon **unary cost arrays** (`*_unary.npy`)  
+  - **Adjacency graph** representing polygon connectivity (`*_graph.pkl`)  
+
 
 ## Ground Truth Mask Generation
 
