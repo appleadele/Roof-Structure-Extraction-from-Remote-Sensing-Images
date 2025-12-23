@@ -99,62 +99,28 @@ The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all required data for M
 
 ### Input & Output
 
-- **Input:**  
-  - RGB images  
-  - Closed polygon annotations (from `lines_to_polygons.py`)  
-  - Trained Mask R-CNN model checkpoint (`.pth`)   
+- **Input:** RGB images, closed polygon annotations (from `lines_to_polygons.py`), and a trained Mask R-CNN model checkpoint (from `resnet50_RoofVec.py`)
+- **Output:** Per-polygon unary cost arrays (`*_unary.npy`) and adjacency graphs representing polygon connectivity (`*_graph.pkl`)
 
-- **Output:**  
-  - Per-polygon **unary cost arrays** (`*_unary.npy`)  
-  - **Adjacency graph** representing polygon connectivity (`*_graph.pkl`)  
 
 
 ## Ground Truth Mask Generation
 
 The script [`generate_gt_masks_from_polygons.py`](./generate_gt_masks_from_polygons.py) converts polygon annotations into pixel-level **ground truth masks**.
 
-This is useful for:
-- Quantitative evaluation (e.g., IoU, pixel accuracy)
-- Visual comparison with predicted masks
+### Input & Output
 
-### Workflow
-
-- Input:
-  - RGB images (`.jpg`)
-  - Polygon annotations (`.json`) — format: list of closed polygons
-- Output:
-  - Binary masks (`.npy`) — 2D NumPy array (uint8)
-  - Visual previews (`.png`) — each instance shaded for visibility
-
-
+- **Input:** RGB images (`.jpg`) and JSON files with closed polygon annotations  
+- **Output:** Ground truth pixel masks (`.npy`) and visualized previews (`.png`)
  
 ## MRF Inference and Evaluation
 
 The script [`run_mrf_and_evaluate.py`](./run_mrf_and_evaluate.py) performs **final MRF label assignment** and **evaluates the results** against ground truth masks.
 
-It uses Graph Cuts Optimization (via `gco`) to infer the optimal label configuration based on:
-- Precomputed **unary potentials** (from model predictions)
-- Polygon **adjacency graph**
-- Varying **smoothness costs**
+### Input & Output
 
-### Inputs
-
-- Precomputed from previous stages:
-  - `*_unary.npy`, `*_graph.pkl` (from MRF preparation)
-  - `*.npy` GT masks (from polygon → mask script)
-
-### Output
-
-- `mrf_evaluation_summary_*.txt`: a tab-separated table summarizing:
-  - TP, FP, FN
-  - Mean IoU
-  - Precision, Recall
-  - Smoothness violation ratio
-
-### Example Smoothness Settings
-
-```python
-smoothness_costs = [0.001, 0.1, 1, 10, 100]
+- **Input:** Precomputed unary costs (`*_unary.npy`), polygon adjacency graphs (`*_graph.pkl`), and ground truth masks (`.npy`)  
+- **Output:** Evaluation summary text file (`mrf_evaluation_summary_*.txt`) containing metrics such as TP, FP, FN, Precision, Recall, Mean IoU, and smoothness violation ratio
 
 
 ## Citation
