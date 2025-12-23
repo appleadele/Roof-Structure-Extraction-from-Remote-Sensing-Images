@@ -56,26 +56,14 @@ The original annotations (e.g., point-edge graphs) cannot be directly used for t
 
 ## Mask R-CNN Training
 
-The script [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a complete training pipeline for instance segmentation using **Mask R-CNN**.
+The script [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a complete training pipeline for rooftop instance segmentation using **Mask R-CNN**.
 
-### Input
+### Input & Output
 
-Both datasets follow the same input format:
-- RGB images
-- Corresponding **JSON files with closed polygon annotations**
+- **Input:** RGB images and corresponding JSON files with closed polygon annotations  
+- **Output:** Best model checkpoint (e.g., `best_model_epoch59_iou0.9415_RoofVec.pth`) and basic training visualizations in `.png` files (loss curve, learning rate schedule, validation IoU)
 
-### Output
 
-- **Best model checkpoint**  
-  e.g., `best_model_epoch59_iou0.9415_RoofVec.pth`
-
-- **Training visualizations**
-  - Learning rate schedule over epochs  
-    (`learning_rate_schedule_RoofVec.png`)
-  - Training loss curve  
-    (`training_loss_curve_RoofVec.png`)
-  - Validation Mean IoU per epoch  
-    (`validation_mean_iou_curve_RoofVec.png`)
 
 
 
