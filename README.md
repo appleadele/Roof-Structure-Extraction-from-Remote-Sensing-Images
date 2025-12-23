@@ -2,6 +2,12 @@
 
 This repository contains code from my master's thesis, including line-to-polygon conversion, model training, mask generation, and MRF-based evaluation.
 
+If you use this repository or build upon this work, please cite the following:
+
+> **Cheng, H.-Y.** (2024, June). *Roof structure extraction from remote sensing images* [Master’s thesis presentation and full thesis]. TU Delft MSc Thesis Final Presentation, Delft University of Technology.  
+> [https://repository.tudelft.nl/record/uuid:4a31d2f4-1615-4afb-a2d8-a9cbfd1530b2](https://repository.tudelft.nl/record/uuid:4a31d2f4-1615-4afb-a2d8-a9cbfd1530b2)
+
+
 ## Datasets Used
 
 This project uses two publicly available rooftop datasets for training and evaluation.  
@@ -160,8 +166,22 @@ It uses Graph Cuts Optimization (via `gco`) to infer the optimal label configura
   - Precision, Recall
   - Smoothness violation ratio
 
-### 🧪 Example Smoothness Settings
+### Example Smoothness Settings
 
 ```python
 smoothness_costs = [0.001, 0.1, 1, 10, 100]
+
+
+## Citation
+
+If you use this code or data processing pipeline in your research, please cite:
+
+```bibtex
+@misc{cheng2024roof,
+  author = {Cheng, H.-Y.},
+  title = {Roof structure extraction from remote sensing images},
+  year = {2024},
+  howpublished = {\url{https://repository.tudelft.nl/record/uuid:4a31d2f4-1615-4afb-a2d8-a9cbfd1530b2}},
+  note = {Master’s thesis, Delft University of Technology}
+}
 
