@@ -119,7 +119,7 @@ The script [`run_mrf_and_evaluate.py`](./run_mrf_and_evaluate.py) performs **fin
 
 ### Input & Output
 
-- **Input:** Precomputed unary costs (`*_unary.npy`), polygon adjacency graphs (`*_graph.pkl`), and ground truth masks (`.npy`)  
+- **Input:** Precomputed unary costs (`*_unary.npy`, from `MRF_RoofVec.py` ), polygon adjacency graphs (`*_graph.pkl`, from `MRF_RoofVec.py`), and ground truth masks (`.npy`, from `generate_gt_masks_from_polygons.py`)  
 - **Output:** Evaluation summary text file (`mrf_evaluation_summary_*.txt`) containing metrics such as TP, FP, FN, Precision, Recall, Mean IoU, and smoothness violation ratio
 
 
