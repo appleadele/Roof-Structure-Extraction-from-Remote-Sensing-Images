@@ -17,7 +17,7 @@ Please cite the original dataset papers if you use this project or the datasets 
 
 ---
 
-### 1. Vectorization-Roof-Data-Set  
+### 1. Vectorization-Roof-Data-Set (RoofVec Dataset)
 [https://github.com/SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)
 
 ```bibtex
