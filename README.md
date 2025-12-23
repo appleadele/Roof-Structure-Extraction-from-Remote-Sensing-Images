@@ -79,7 +79,7 @@ After training completes, the script will automatically save:
 These outputs can be used to evaluate training dynamics or reload the best-performing model.
 
 
-## 🧱 Roofline Extraction from RGB Orthophotos
+## Roofline Extraction from RGB Orthophotos
 
 To extract structured rooflines from RGB orthophotos, this project uses the method from:
 
@@ -100,3 +100,19 @@ publisher = {Springer},
 }
 
 ```
+
+## Line-to-Polygon Conversion
+
+The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments (stored as `.gpkg` LineStrings) into closed polygon geometries using `shapely.polygonize`.
+
+This is a post-processing step that takes the line-based output from the *Unsupervised Roofline Extraction* method and turns it into usable polygonal proposals for later stages (e.g., MRF optimization).
+
+## MRF Unary and Graph Preparation
+
+The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all necessary inputs for MRF optimization, including:
+
+- Soft masks and scores from a trained **Mask R-CNN model**
+- Closed polygons from previous `lines_to_polygons.py` output
+- Computed **unary costs** per polygon (based on predicted instance masks)
+- Built **adjacency graphs** using polygon edge adjacency
+- All outputs saved for later optimization
