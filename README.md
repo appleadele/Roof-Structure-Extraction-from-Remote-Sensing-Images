@@ -11,13 +11,14 @@ If you use this repository or build upon this work, please cite the following:
 ## Datasets Used
 
 This project uses two publicly available rooftop datasets for training and evaluation.  
-**Note:** *Only the datasets were used; methods or models proposed in the original papers were not applied.*
+Only the datasets were used — **the methods or models proposed in the original papers were not applied**.
 
-### 1. Vectorization-Roof-Data-Set
+Please cite the original dataset papers if you use this project or the datasets in your research.
 
-- **Dataset:** [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)  
+---
 
-#### Citation
+### 1. Vectorization-Roof-Data-Set  
+[https://github.com/SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)
 
 ```bibtex
 @Article{isprs-archives-XLVI-4-W4-2021-85-2021,
@@ -34,9 +35,7 @@ This project uses two publicly available rooftop datasets for training and evalu
 
 ### 2. Vectorizing World Buildings (Cities Dataset)
 
-- **Dataset & Code:** [ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
-
-#### Citation
+[ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
 
 ```bibtex
 @inproceedings{nauata2020vectorizing,
