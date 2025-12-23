@@ -2,8 +2,6 @@
 
 This repository contains code from my master's thesis, including line-to-polygon conversion, model training, mask generation, and MRF-based evaluation.
 
-If you use this repository or build upon this work, please cite the following:
-
 > **Cheng, H.-Y.** (2025, June). *Roof structure extraction from remote sensing images* [Master’s thesis presentation and full thesis]. TU Delft MSc Thesis Final Presentation, Delft University of Technology.  
 > [https://repository.tudelft.nl/record/uuid:4a31d2f4-1615-4afb-a2d8-a9cbfd1530b2](https://repository.tudelft.nl/record/uuid:4a31d2f4-1615-4afb-a2d8-a9cbfd1530b2)
 
