@@ -1,15 +1,22 @@
 # Roof-Structure-Extraction-from-Remote-Sensing-Images
+
 This repository contains code from my master's thesis, including line-to-polygon conversion, model training, mask generation, and MRF-based evaluation.
 
+## Datasets Used
 
-## Dataset Used: Vectorization-Roof-Data-Set
+This project uses two publicly available rooftop datasets for training and evaluation.  
+**Note:** *Only the datasets were used; methods or models proposed in the original papers were not applied.*
 
-This project uses the **Vectorization-Roof-Data-Set**, a dataset designed for training and testing the PPGNet model on rooftop structure vectorization tasks.
+---
 
-- Original dataset repository: [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)
-- Paper: "BUILDING ROOF VECTORIZATION WITH PPGNET"
+### 1. Vectorization-Roof-Data-Set
 
-Please cite the dataset using the following reference:
+A dataset designed for rooftop structure vectorization, based on aerial imagery from Detmold, Germany. It includes polygonal annotations and line-based representations of roofs.
+
+- 🔗 **Dataset:** [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)  
+- 📄 **Paper:** *BUILDING ROOF VECTORIZATION WITH PPGNET*
+
+#### Citation
 
 ```bibtex
 @Article{isprs-archives-XLVI-4-W4-2021-85-2021,
@@ -21,4 +28,24 @@ Please cite the dataset using the following reference:
   PAGES = {85--90},
   URL = {https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVI-4-W4-2021/85/2021/},
   DOI = {10.5194/isprs-archives-XLVI-4-W4-2021-85-2021}
+}
+
+### 2. Vectorizing World Buildings (Cities Dataset)
+
+This dataset contains annotations for 2,001 buildings across Los Angeles, Las Vegas, and Paris, using cropped RGB satellite images from the SpaceNet corpus.  
+It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and provides building rooftop structures in the form of planar graphs.
+
+- 🔗 **Dataset & Code:** [ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
+- 📄 **Paper:** *Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection and Relationship Inference (ECCV 2020)*
+
+#### Citation
+
+```bibtex
+@inproceedings{nauata2020vectorizing,
+  title={Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection and Relationship Inference},
+  author={Nauata, Nelson and Furukawa, Yasutaka},
+  booktitle={European Conference on Computer Vision},
+  pages={711--726},
+  year={2020},
+  organization={Springer}
 }
