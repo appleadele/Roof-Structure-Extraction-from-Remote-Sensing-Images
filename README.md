@@ -56,7 +56,7 @@ The original annotations (e.g., point-edge graphs) cannot be directly used for t
 
 ## Mask R-CNN Training
 
-The script [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a complete training pipeline for rooftop instance segmentation using **Mask R-CNN**.
+The script [`resnet50_RoofVec.py`](./script/resnet50_RoofVec.py) provides a complete training pipeline for rooftop instance segmentation using **Mask R-CNN**.
 
 ### Input & Output
 
@@ -91,23 +91,23 @@ If you use this method or its results in your own work, please cite the original
 
 ## Line-to-Polygon Conversion
 
-The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments (from *Unsupervised Roofline Extraction from True Orthophotos*) into closed polygon geometries.  
+The script [`lines_to_polygons.py`](./script/lines_to_polygons.py) converts roofline segments (from *Unsupervised Roofline Extraction from True Orthophotos*) into closed polygon geometries.  
 The output is saved in `.gpkg` format.
 
 ## MRF Unary and Graph Preparation
 
-The script [`MRF_RoofVec.py`](./MRF_RoofVec.py) prepares all required data for MRF optimization based on predictions and geometry.
+The script [`MRF_RoofVec.py`](./script/MRF_RoofVec.py) prepares all required data for MRF optimization based on predictions and geometry.
 
 ### Input & Output
 
-- **Input:** RGB images, closed polygon annotations (from `lines_to_polygons.py`), and a trained Mask R-CNN model checkpoint (from `resnet50_RoofVec.py`)
+- **Input:** RGB images, closed polygon annotations (from [`lines_to_polygons.py`](./script/lines_to_polygons.py)), and a trained Mask R-CNN model checkpoint (from [`resnet50_RoofVec.py`](./script/resnet50_RoofVec.py))
 - **Output:** Per-polygon unary cost arrays (`*_unary.npy`) and adjacency graphs representing polygon connectivity (`*_graph.pkl`)
 
 
 
 ## Ground Truth Mask Generation
 
-The script [`generate_gt_masks_from_polygons.py`](./generate_gt_masks_from_polygons.py) converts polygon annotations into pixel-level **ground truth masks**.
+The script [`generate_gt_masks_from_polygons.py`](./script/generate_gt_masks_from_polygons.py) converts polygon annotations into pixel-level **ground truth masks**.
 
 ### Input & Output
 
@@ -116,11 +116,11 @@ The script [`generate_gt_masks_from_polygons.py`](./generate_gt_masks_from_polyg
  
 ## MRF Inference and Evaluation
 
-The script [`run_mrf_and_evaluate.py`](./run_mrf_and_evaluate.py) performs **final MRF label assignment** and **evaluates the results** against ground truth masks.
+The script [`run_mrf_and_evaluate.py`](./script/run_mrf_and_evaluate.py) performs **final MRF label assignment** and **evaluates the results** against ground truth masks.
 
 ### Input & Output
 
-- **Input:** Precomputed unary costs (`*_unary.npy`, from `MRF_RoofVec.py` ), polygon adjacency graphs (`*_graph.pkl`, from `MRF_RoofVec.py`), and ground truth masks (`.npy`, from `generate_gt_masks_from_polygons.py`)  
+- **Input:** Precomputed unary costs (`*_unary.npy`, from [`MRF_RoofVec.py`](./script/MRF_RoofVec.py) ), polygon adjacency graphs (`*_graph.pkl`, from [`MRF_RoofVec.py`](./script/MRF_RoofVec.py)), and ground truth masks (`.npy`, from [`generate_gt_masks_from_polygons.py`](./script/generate_gt_masks_from_polygons.py))  
 - **Output:** Evaluation summary text file (`mrf_evaluation_summary_*.txt`) containing metrics such as TP, FP, FN, Precision, Recall, Mean IoU, and smoothness violation ratio
 
 
