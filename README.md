@@ -15,10 +15,7 @@ This project uses two publicly available rooftop datasets for training and evalu
 
 ### 1. Vectorization-Roof-Data-Set
 
-A dataset designed for rooftop structure vectorization, based on aerial imagery from Detmold, Germany. It includes polygonal annotations and line-based representations of roofs.
-
 - **Dataset:** [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)  
-- **Paper:** *BUILDING ROOF VECTORIZATION WITH PPGNET*
 
 #### Citation
 
@@ -37,11 +34,7 @@ A dataset designed for rooftop structure vectorization, based on aerial imagery 
 
 ### 2. Vectorizing World Buildings (Cities Dataset)
 
-This dataset contains annotations for 2,001 buildings across Los Angeles, Las Vegas, and Paris, using cropped RGB satellite images from the SpaceNet corpus.  
-It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and provides building rooftop structures in the form of planar graphs.
-
 - **Dataset & Code:** [ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
-- **Paper:** *Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection and Relationship Inference (ECCV 2020)*
 
 #### Citation
 
@@ -60,7 +53,7 @@ It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and prov
 
 ##  Data Preprocessing
 
-The original annotations (e.g., point-edge graphs) cannot be directly used for training instance segmentation models like Mask R-CNN. We first converted them into closed polygons and rasterized binary masks for training.
+The original annotations (e.g., point-edge graphs) cannot be directly used for training instance segmentation models like Mask R-CNN, which require closed polygon annotations. We converted the raw data into JSON-formatted closed polygons.
 
 ##  Mask R-CNN Training
 
