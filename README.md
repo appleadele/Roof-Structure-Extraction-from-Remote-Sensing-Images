@@ -7,8 +7,6 @@ This repository contains code from my master's thesis, including line-to-polygon
 This project uses two publicly available rooftop datasets for training and evaluation.  
 **Note:** *Only the datasets were used; methods or models proposed in the original papers were not applied.*
 
----
-
 ### 1. Vectorization-Roof-Data-Set
 
 A dataset designed for rooftop structure vectorization, based on aerial imagery from Detmold, Germany. It includes polygonal annotations and line-based representations of roofs.
@@ -57,4 +55,15 @@ It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and prov
 ##  Data Preprocessing
 
 The original annotations (e.g., point-edge graphs) cannot be directly used for training instance segmentation models like Mask R-CNN. We first converted them into closed polygons and rasterized binary masks for training.
+
+##  Mask R-CNN Training
+
+The file [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a full training pipeline for instance segmentation using **Mask R-CNN with a ResNet-50 backbone**, built on top of `torchvision`.
+
+This script was primarily used to train a rooftop instance segmentation model on the **RoofVec** dataset, but it can also be used with the **Cities Dataset** (from the *Vectorizing World Buildings* paper) with minimal changes.
+
+Both datasets follow the same preprocessed format: RGB images with corresponding JSON polygon annotations.
+
+
+
 
