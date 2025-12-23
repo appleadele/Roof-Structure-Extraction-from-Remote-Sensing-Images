@@ -74,17 +74,17 @@ To extract structured rooflines from RGB orthophotos, this project uses the meth
 **[Unsupervised Roofline Extraction from True Orthophotos](https://github.com/tudelft3d/Roofline-extraction-from-orthophotos)**  
 *Gao, Peters, and Stoter, 3D GeoInfo 2023*
 
-This method detects line segments corresponding to rooftop structures and saves the output as `.gpkg` (GeoPackage) files. These line features are later used for polygon proposal generation and further post-processing in this project.
+The outputs are stored as `.gpkg` (GeoPackage) files and were used for polygon proposal generation and later processing in this project.
 
-#### Citation
+If you use this method or its results in your own work, please cite the original paper:
 
 ```bibtex
 @article{sum2021,
-author = {Weixiao Gao, Ravi Peters, and Jantien Stoter},
-title = {Unsupervised Roofline Extraction from True Orthophotos for LoD2 Building Model Reconstruction},
-journal = {Lecture Notes in Geoinformation and Cartography (LNG&C) series},
-year={2023},
-publisher = {Springer},
+  author = {Weixiao Gao, Ravi Peters, and Jantien Stoter},
+  title = {Unsupervised Roofline Extraction from True Orthophotos for LoD2 Building Model Reconstruction},
+  journal = {Lecture Notes in Geoinformation and Cartography (LNG&C) series},
+  year = {2023},
+  publisher = {Springer}
 }
 
 ```
