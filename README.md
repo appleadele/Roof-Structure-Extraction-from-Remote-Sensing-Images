@@ -134,7 +134,7 @@ Demo data, additional evaluation tools, and a method for converting results into
 If you use this code or data processing pipeline in your research, please cite:
 
 ```bibtex
-@misc{cheng2024roof,
+@misc{cheng2025roof,
   author = {Cheng, H.-Y.},
   title = {Roof structure extraction from remote sensing images},
   year = {2024},
