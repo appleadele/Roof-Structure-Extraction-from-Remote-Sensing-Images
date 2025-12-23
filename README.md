@@ -71,7 +71,7 @@ After training completes, the script will automatically save:
 - The best model checkpoint:  
   e.g., `best_model_epoch59_iou0.9415_RoofVec.pth`
 
-- 📈 Training visualizations (saved in the current directory):
+- Training visualizations:
   - `learning_rate_schedule_RoofVec.png` — the LR decay over epochs
   - `training_loss_curve_RoofVec.png` — loss trend during training
   - `validation_mean_iou_curve_RoofVec.png` — validation IoU per epoch
