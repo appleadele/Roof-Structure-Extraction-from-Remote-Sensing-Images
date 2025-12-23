@@ -124,6 +124,11 @@ The script [`run_mrf_and_evaluate.py`](./script/run_mrf_and_evaluate.py) perform
 - **Output:** Evaluation summary text file (`mrf_evaluation_summary_*.txt`) containing metrics such as TP, FP, FN, Precision, Recall, Mean IoU, and smoothness violation ratio
 
 
+## Future Work
+
+Demo data, additional evaluation tools, and a method for converting results into 3D building models will be added in future updates.
+
+
 ## Citation
 
 If you use this code or data processing pipeline in your research, please cite:
