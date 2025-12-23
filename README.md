@@ -52,3 +52,21 @@ It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and prov
 }
 
 ```
+
+
+##  Data Preprocessing
+
+<details>
+<summary>🛠️ Annotation Conversion (Click to expand)</summary>
+
+The original datasets do **not** provide annotations in closed polygon format (e.g., GeoJSON-style or vectorized lists).  
+To support polygon-based processing in this project (e.g., for MRF or visualization), we converted all annotations into closed polygon structures using internal scripts.
+
+⚠️ **Note:**  
+The conversion code is currently in a raw/unorganized state and **not yet ready for public use**.  
+If you're interested in the conversion pipeline or plan to reuse the data format, feel free to open an issue or contact me for details.
+
+> ✅ The converted polygon annotations (in JSON format) are located in the `data/converted/` directory.
+
+</details>
+
