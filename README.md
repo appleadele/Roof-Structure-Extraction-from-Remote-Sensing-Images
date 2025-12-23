@@ -91,7 +91,7 @@ If you use this method or its results in your own work, please cite the original
 
 ## Line-to-Polygon Conversion
 
-The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments (from *Unsupervised Roofline Extraction*) into closed polygon geometries.  
+The script [`lines_to_polygons.py`](./lines_to_polygons.py) converts roofline segments (from *Unsupervised Roofline Extraction from True Orthophotos*) into closed polygon geometries.  
 The output is saved in `.gpkg` format.
 
 ## MRF Unary and Graph Preparation
