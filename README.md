@@ -29,6 +29,7 @@ A dataset designed for rooftop structure vectorization, based on aerial imagery 
   URL = {https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVI-4-W4-2021/85/2021/},
   DOI = {10.5194/isprs-archives-XLVI-4-W4-2021-85-2021}
 }
+```
 
 ### 2. Vectorizing World Buildings (Cities Dataset)
 
