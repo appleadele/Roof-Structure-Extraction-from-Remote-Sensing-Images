@@ -13,8 +13,8 @@ This project uses two publicly available rooftop datasets for training and evalu
 
 A dataset designed for rooftop structure vectorization, based on aerial imagery from Detmold, Germany. It includes polygonal annotations and line-based representations of roofs.
 
-- 🔗 **Dataset:** [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)  
-- 📄 **Paper:** *BUILDING ROOF VECTORIZATION WITH PPGNET*
+- **Dataset:** [SimonHensel/Vectorization-Roof-Data-Set](https://github.com/SimonHensel/Vectorization-Roof-Data-Set)  
+- **Paper:** *BUILDING ROOF VECTORIZATION WITH PPGNET*
 
 #### Citation
 
@@ -36,8 +36,8 @@ A dataset designed for rooftop structure vectorization, based on aerial imagery 
 This dataset contains annotations for 2,001 buildings across Los Angeles, Las Vegas, and Paris, using cropped RGB satellite images from the SpaceNet corpus.  
 It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and provides building rooftop structures in the form of planar graphs.
 
-- 🔗 **Dataset & Code:** [ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
-- 📄 **Paper:** *Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection and Relationship Inference (ECCV 2020)*
+- **Dataset & Code:** [ennauata/buildings2vec](https://github.com/ennauata/buildings2vec)  
+- **Paper:** *Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection and Relationship Inference (ECCV 2020)*
 
 #### Citation
 
@@ -50,3 +50,5 @@ It was introduced in the ECCV 2020 paper *Vectorizing World Buildings*, and prov
   year={2020},
   organization={Springer}
 }
+
+```
