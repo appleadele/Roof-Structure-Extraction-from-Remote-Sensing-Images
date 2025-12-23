@@ -64,6 +64,21 @@ This script was primarily used to train a rooftop instance segmentation model on
 
 Both datasets follow the same preprocessed format: RGB images with corresponding JSON polygon annotations.
 
+### Training Outputs
+
+After training completes, the script will automatically save:
+
+- The best model checkpoint:  
+  e.g., `best_model_epoch59_iou0.9415_RoofVec.pth`
+
+- 📈 Training visualizations (saved in the current directory):
+  - `learning_rate_schedule_RoofVec.png` — the LR decay over epochs
+  - `training_loss_curve_RoofVec.png` — loss trend during training
+  - `validation_mean_iou_curve_RoofVec.png` — validation IoU per epoch
+
+These outputs can be used to evaluate training dynamics or reload the best-performing model.
+
+
 
 
 
