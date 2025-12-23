@@ -100,7 +100,7 @@ The script [`MRF_RoofVec.py`](./script/MRF_RoofVec.py) prepares all required dat
 
 ### Input & Output
 
-- **Input:** RGB images, closed polygon annotations (from [`lines_to_polygons.py`](./script/lines_to_polygons.py)), and a trained Mask R-CNN model checkpoint (from [`resnet50_RoofVec.py`](./script/resnet50_RoofVec.py))
+- **Input:** RGB images, closed polygon candidate (from [`lines_to_polygons.py`](./script/lines_to_polygons.py)), and a trained Mask R-CNN model checkpoint (from [`resnet50_RoofVec.py`](./script/resnet50_RoofVec.py))
 - **Output:** Per-polygon unary cost arrays (`*_unary.npy`) and adjacency graphs representing polygon connectivity (`*_graph.pkl`)
 
 
