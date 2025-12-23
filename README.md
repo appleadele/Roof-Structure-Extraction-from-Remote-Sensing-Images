@@ -54,27 +54,29 @@ Please cite the original dataset papers if you use this project or the datasets 
 
 The original annotations (e.g., point-edge graphs) cannot be directly used for training instance segmentation models like Mask R-CNN, which require closed polygon annotations. We converted the raw data into JSON-formatted closed polygons.
 
-##  Mask R-CNN Training
+## Mask R-CNN Training
 
-The file [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a full training pipeline for instance segmentation using **Mask R-CNN with a ResNet-50 backbone**, built on top of `torchvision`.
+The script [`resnet50_RoofVec.py`](./resnet50_RoofVec.py) provides a complete training pipeline for instance segmentation using **Mask R-CNN**.
 
-This script was primarily used to train a rooftop instance segmentation model on the **RoofVec** dataset, but it can also be used with the **Cities Dataset** (from the *Vectorizing World Buildings* paper) with minimal changes.
+### Input
 
-Both datasets follow the same preprocessed format: RGB images with corresponding JSON polygon annotations.
+Both datasets follow the same input format:
+- RGB images
+- Corresponding **JSON files with closed polygon annotations**
 
-### Training Outputs
+### Output
 
-After training completes, the script will automatically save:
-
-- The best model checkpoint:  
+- **Best model checkpoint**  
   e.g., `best_model_epoch59_iou0.9415_RoofVec.pth`
 
-- Training visualizations:
-  - `learning_rate_schedule_RoofVec.png` — the LR decay over epochs
-  - `training_loss_curve_RoofVec.png` — loss trend during training
-  - `validation_mean_iou_curve_RoofVec.png` — validation IoU per epoch
+- **Training visualizations**
+  - Learning rate schedule over epochs  
+    (`learning_rate_schedule_RoofVec.png`)
+  - Training loss curve  
+    (`training_loss_curve_RoofVec.png`)
+  - Validation Mean IoU per epoch  
+    (`validation_mean_iou_curve_RoofVec.png`)
 
-These outputs can be used to evaluate training dynamics or reload the best-performing model.
 
 
 ## Roofline Extraction from RGB Orthophotos
